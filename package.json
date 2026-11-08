@@ -1,0 +1,13 @@
+{
+  "name": "plataforma-resenas-peliculas-u1",
+  "version": "1.0.0",
+  "description": "ABP Unidad 1 (Estructura de Datos, UNL): reseñas de películas con arreglos, listas, pilas, colas y archivos",
+  "main": "src/plataforma.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "test": "node --expose-gc --test",
+    "cobertura": "node --expose-gc --test --experimental-test-coverage",
+    "demo": "node demo.js",
+    "bench": "node --expose-gc bench/benchmark.js"
+  }
+}
