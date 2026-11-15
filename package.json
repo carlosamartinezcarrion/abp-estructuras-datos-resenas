@@ -5,9 +5,10 @@
   "main": "src/plataforma.js",
   "license": "UNLICENSED",
   "scripts": {
-    "test": "node --expose-gc --test",
-    "cobertura": "node --expose-gc --test --experimental-test-coverage",
-    "demo": "node demo.js",
-    "bench": "node --expose-gc bench/benchmark.js"
-  }
+  "test": "node --expose-gc --test",
+  "cobertura": "node --expose-gc --test --experimental-test-coverage",
+  "demo": "node demo.js",
+  "bench": "node --expose-gc bench/benchmark.js",
+  "bench:orden": "node --expose-gc bench/ordenamiento.js"
+}
 }
