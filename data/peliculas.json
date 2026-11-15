@@ -1,0 +1,14 @@
+[
+  { "id": 1,  "titulo": "The Godfather",            "anio": 1972, "generos": ["Drama", "Crimen"] },
+  { "id": 2,  "titulo": "The Godfather Part II",    "anio": 1974, "generos": ["Drama", "Crimen"] },
+  { "id": 3,  "titulo": "The Shawshank Redemption", "anio": 1994, "generos": ["Drama"] },
+  { "id": 4,  "titulo": "The Green Mile",           "anio": 1999, "generos": ["Drama", "Fantasía"] },
+  { "id": 5,  "titulo": "Pulp Fiction",             "anio": 1994, "generos": ["Crimen", "Drama"] },
+  { "id": 6,  "titulo": "Inception",                "anio": 2010, "generos": ["Ciencia ficción", "Acción"] },
+  { "id": 7,  "titulo": "The Dark Knight",          "anio": 2008, "generos": ["Acción", "Crimen"] },
+  { "id": 8,  "titulo": "Interstellar",             "anio": 2014, "generos": ["Ciencia ficción", "Drama"] },
+  { "id": 9,  "titulo": "Titanic",                  "anio": 1997, "generos": ["Drama", "Romance"] },
+  { "id": 10, "titulo": "Avatar",                   "anio": 2009, "generos": ["Ciencia ficción", "Acción"] },
+  { "id": 11, "titulo": "The Matrix",               "anio": 1999, "generos": ["Ciencia ficción", "Acción"] },
+  { "id": 12, "titulo": "Parasite",                 "anio": 2019, "generos": ["Drama", "Suspenso"] }
+]
