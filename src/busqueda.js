@@ -19,4 +19,51 @@ function buscarPorTitulo(peliculas, texto, k = 10) {
   }
   return res;
 }
-module.exports = { busquedaSecuencial, buscarPorTitulo, normalizar };
+
+// Comparador ascendente por defecto (números o cadenas).
+// Para objetos, pasar el mismo comparador que se utilizó al ordenar con MergeSort.
+function compararAscendente(a, b) {
+  if (a === b) return 0;
+  return a < b ? -1 : 1;
+}
+
+// Núcleo binario reusable para almacenamiento en RAM o accesos indexados.
+// Se contabiliza UNA comparación de claves por posición central inspeccionada.
+function busquedaBinariaConAcceso(longitud, leerPosicion, objetivo, comparador = compararAscendente) {
+  if (!Number.isSafeInteger(longitud) || longitud < 0) {
+    throw new RangeError('La longitud debe ser un entero no negativo');
+  }
+  if (typeof leerPosicion !== 'function' || typeof comparador !== 'function') {
+    throw new TypeError('Se requieren funciones de acceso y comparación');
+  }
+  let izquierda = 0;
+  let derecha = longitud - 1;
+  let comparaciones = 0;
+
+  while (izquierda <= derecha) {
+    const medio = izquierda + Math.floor((derecha - izquierda) / 2);
+    const orden = comparador(leerPosicion(medio), objetivo);
+    if (typeof orden !== 'number' || Number.isNaN(orden)) {
+      throw new TypeError('El comparador debe devolver un número válido');
+    }
+    comparaciones++;
+    if (orden === 0) return { indice: medio, comparaciones };
+    if (orden < 0) izquierda = medio + 1;
+    else derecha = medio - 1;
+  }
+  return { indice: -1, comparaciones };
+}
+
+
+function busquedaBinaria(arreglo, objetivo, comparador = compararAscendente) {
+  if (!Array.isArray(arreglo)) throw new TypeError('Se requiere un arreglo ordenado');
+  return busquedaBinariaConAcceso(arreglo.length, indice => arreglo[indice], objetivo, comparador);
+}
+
+module.exports = {
+  busquedaSecuencial,
+  buscarPorTitulo,
+  normalizar,
+  busquedaBinaria,
+  busquedaBinariaConAcceso,
+};
